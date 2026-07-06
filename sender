@@ -1,0 +1,13 @@
+// on sender pc
+local modem = peripheral.wrap("top")
+
+while 1 == 1 do
+    local green = rs.getAnalogInput("back")
+    local darkb = rs.getAnalogInput("front")
+    local lightb = rs.getAnalogInput("right")
+    local tpb = rs.getAnalogInput("left")
+    local data = {green,darkb,lightb,tpb}
+    modem.transmit(99,56,data)
+    sleep(0.10)
+    end
+
