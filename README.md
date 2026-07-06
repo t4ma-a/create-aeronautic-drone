@@ -1,11 +1,11 @@
-<img width="1602" height="738" alt="изображение" src="https://github.com/user-attachments/assets/6bfaf597-29c3-448c-86f7-69bc3f577a28 />
-
- ### Hello , this is my project 
+<img width="1602" height="738" alt="изображение" src="https://github.com/user-attachments/assets/6bfaf597-29c3-448c-86f7-69bc3f577a28" />
+## Create Aeronautic Drone
+ Hello , this is my project 
 PID controlled drone.
 This architecture with few changes can be used in a real drone.
 <img width="1602" height="738" alt="изображение" src="https://github.com/user-attachments/assets/897528f7-9cb7-4a48-ae3c-bf283c75e111" />
 
-  ### -- now i tell how to start drone-- 
+ ### How to start the drone
 
 1. **First download schematic and drop file in `minecraft/schematics` then use the schematic table to make a schematic and place it.**
 
@@ -19,3 +19,11 @@ computercraft/computer/` select the folder with the ID name of the top PC and dr
 5. **To change the height pull the lever : 0 - max - 15 min.**
 <img width="1602" height="738" alt="изображение" src="https://github.com/user-attachments/assets/bf5b6cf0-2039-4491-9d5c-18b821a25429" />
 
+## Requirements & Dependencies
+
+* **Game Version:** Minecraft 1.21.1 (NeoForge)
+* **Required Mods:**
+  * Create
+  * Create Aeronautics
+  * CC: Tweaked (ComputerCraft)
+  * (And all of their required dependencies)
