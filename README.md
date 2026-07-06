@@ -1,5 +1,6 @@
-<img width="1602" height="738" alt="изображение" src="https://github.com/user-attachments/assets/6bfaf597-29c3-448c-86f7-69bc3f577a28" /># create-aeronautic-drone
-Hello , this is my project 
+<img width="1602" height="738" alt="изображение" src="https://github.com/user-attachments/assets/6bfaf597-29c3-448c-86f7-69bc3f577a28" 
+
+ ### Hello , this is my project 
 PID controlled drone.
 This architecture with few changes can be used in a real drone.
 <img width="1602" height="738" alt="изображение" src="https://github.com/user-attachments/assets/897528f7-9cb7-4a48-ae3c-bf283c75e111" />
