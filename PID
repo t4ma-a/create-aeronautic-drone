@@ -1,0 +1,67 @@
+--on receiver pc
+local modem = peripheral.wrap("top")
+modem.open(99)
+local target = 0
+local last_otkol_x = 0
+local integ_x = 0
+local step = 0
+local integ_y = 0
+local last_otkol_y = 0
+local count_first = 0
+local count_second = 0
+local Kp = 0.6
+local Ki = 0.15
+local Kd = 10
+function pid(plus,minus,integ,last_otkol)
+local posss = plus - minus
+local otkol = target - posss
+print("pos:" ,posss)
+integ = integ + otkol
+integ = math.max(-5, math.min(5, integ))
+local spesd = otkol - last_otkol
+last_otkol = otkol
+local signal = (otkol * Kp) + (integ * Ki) + (spesd * Kd)
+return signal,integ, last_otkol
+end
+local counter = 0
+local base_gase = 0
+local base_top = base_gas
+local base_front = base_gas
+local base_left  = base_gas
+local base_right = base_gas
+while 10 == 10 do
+    local base_gas = 0
+    local _, _, _, _, message = os.pullEvent("modem_message")
+    local green = message[1]
+    local darkb = message[2]
+    local lightb = message[3]
+    local tpb = message[4]
+    local pwr, ix, lx = pid(tpb, lightb, integ_x, last_otkol_x)
+    integ_x, last_otkol_x = ix, lx
+    local pwr1, iy, ly = pid(green, darkb, integ_y, last_otkol_y)
+    integ_y, last_otkol_y = iy, ly
+
+
+
+
+    local base_top = base_gas
+    local base_front = base_gas
+    local base_left = base_gas
+    local base_right = base_gas
+    local motor_top   = base_top   + pwr1  --  Y ()
+    local motor_front = base_front - pwr1  --  Y ()
+    local motor_left  = base_left  + pwr   --  X ()
+    local motor_right = base_right - pwr   --  X ()
+
+    motor_top = math.max(0,math.min(6, motor_top))
+    motor_front = math.max(0,math.min(6, motor_front))
+    motor_left = math.max(0,math.min(6, motor_left))
+    motor_right = math.max(0,math.min(6, motor_right))
+    print("left",motor_left)
+    rs.setAnalogOutput("back",   motor_top)
+    rs.setAnalogOutput("front", motor_front)
+    rs.setAnalogOutput("left",  motor_left)
+    rs.setAnalogOutput("right", motor_right)
+    print("T:", motor_top, " F:", motor_front, " L:", motor_left, " R:", motor_right)
+    counter = counter + 1
+    end
