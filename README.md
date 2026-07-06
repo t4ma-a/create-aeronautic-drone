@@ -1,4 +1,4 @@
-<img width="1602" height="738" alt="изображение" src="https://github.com/user-attachments/assets/6bfaf597-29c3-448c-86f7-69bc3f577a28" 
+<img width="1602" height="738" alt="изображение" src="https://github.com/user-attachments/assets/6bfaf597-29c3-448c-86f7-69bc3f577a28 />
 
  ### Hello , this is my project 
 PID controlled drone.
