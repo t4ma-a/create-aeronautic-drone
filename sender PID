@@ -1,4 +1,4 @@
-// on sender pc
+-- on sender pc
 local modem = peripheral.wrap("top")
 
 while 1 == 1 do
